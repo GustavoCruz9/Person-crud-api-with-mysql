@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cruz.gustavo.data.vo.v1.PersonVO;
+import cruz.gustavo.data.vo.v2.PersonVOV2;
 import cruz.gustavo.exceptions.ResourceNotFoundException;
 import cruz.gustavo.mapper.DozerMapper;
+import cruz.gustavo.mapper.custom.PersonMapper;
 import cruz.gustavo.model.Person;
 import cruz.gustavo.repositories.PersonRepository;
 
@@ -21,6 +23,9 @@ public class PersonServices {
 	@Autowired
 	PersonRepository pRep;
 
+	@Autowired
+	PersonMapper mapper;
+	
 	public PersonVO findById(Long id) {
 
 		logger.info("Finding one person!");
@@ -45,6 +50,16 @@ public class PersonServices {
 
 		var vo = DozerMapper.parseObject(pRep.save(entity), PersonVO.class);
 
+		return vo;
+	}
+	
+	public PersonVOV2 createV2(PersonVOV2 person) {
+		logger.info("Creating one person!");
+		
+		var entity = mapper.convertVoToEntity(person);
+		
+		var vo = mapper.convertEntityToVo(pRep.save(entity));
+		
 		return vo;
 	}
 
