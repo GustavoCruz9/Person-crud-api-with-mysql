@@ -1,0 +1,13 @@
+cruz\gustavo\Greeting.class
+cruz\gustavo\controllers\PersonController.class
+cruz\gustavo\Startup.class
+cruz\gustavo\data\vo\v1\PersonVO.class
+cruz\gustavo\model\Person.class
+cruz\gustavo\exceptions\ExceptionResponse.class
+cruz\gustavo\exceptions\handler\CustomizedResponseEntityExcpetionHandler.class
+cruz\gustavo\services\PersonServices.class
+cruz\gustavo\data\vo\v2\PersonVOV2.class
+cruz\gustavo\mapper\custom\PersonMapper.class
+cruz\gustavo\exceptions\ResourceNotFoundException.class
+cruz\gustavo\repositories\PersonRepository.class
+cruz\gustavo\mapper\DozerMapper.class
